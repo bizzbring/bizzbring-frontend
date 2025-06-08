@@ -610,14 +610,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: transparent;
+            background: var(--dark-slate);
             opacity: 0;
             transition: opacity 0.4s ease;
             z-index: 1;
         }
 
         .portfolio-item:hover::before {
-            opacity: 0;
+            opacity: 0.1;
         }
 
         .portfolio-item:hover {
@@ -636,24 +636,12 @@
             transform: scale(1.1);
         }
 
-.portfolio-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--dark-slate); /* gold-like overlay */
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-
-.portfolio-item:hover::before {
-  opacity: 0.1;
-}
-
-
+        .portfolio-content {
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
 
         .portfolio-content h3 {
             font-size: 1.4rem;
