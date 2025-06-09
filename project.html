@@ -1,13 +1,14 @@
-<!-- FULL HTML: floating effect on h1 and h2 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tech Startup Branding - BizzBring Media</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
@@ -68,20 +69,36 @@
       background-color: var(--dark-slate);
       color: white;
     }
-.project-hero {
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  margin-top: 80px;
-  background: linear-gradient(rgba(139, 110, 76, 0.85), rgba(139, 110, 76, 0.85)),
-    url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-  background-size: cover;
-  background-position: center;
-  animation: gradientMove 15s ease infinite;
-}
+
+    .project-hero {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      margin-top: 80px;
+    }
+
+    /* New video background styling */
+    .project-hero video.hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    /* Ensures text content appears above video */
+    .project-hero .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
 
     .project-hero h1 {
       font-size: 3rem;
@@ -215,25 +232,50 @@
 
     /* Animation Effects */
     @keyframes glowing {
-      0% { box-shadow: 0 0 5px var(--accent-color); }
-      50% { box-shadow: 0 0 20px var(--accent-color); }
-      100% { box-shadow: 0 0 5px var(--accent-color); }
+      0% {
+        box-shadow: 0 0 5px var(--accent-color);
+      }
+
+      50% {
+        box-shadow: 0 0 20px var(--accent-color);
+      }
+
+      100% {
+        box-shadow: 0 0 5px var(--accent-color);
+      }
     }
 
     @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
     }
 
     @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     /* 🔥 Apply floating to ALL major headings */
-    h1, h2 {
+    h1,
+    h2 {
       animation: float 5s ease-in-out infinite;
     }
 
@@ -259,9 +301,26 @@
         padding: 8px 12px;
         font-size: 0.95rem;
       }
+
+    }
+
+    .project-gallery video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid var(--dark-slate);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-gallery video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -272,19 +331,26 @@
   </header>
 
   <section class="project-hero" data-aos="fade-in">
-    <div>
-      <h1>Tech Startup Branding</h1>
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="real.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Real-Estate Work</h1>
       <p id="typing-text"></p>
       <a href="index.html#contact" class="cta-button">Start Your Project</a>
     </div>
   </section>
 
+
   <section class="project-details" data-aos="fade-up">
     <h2>Project Overview</h2>
-    <p>For this fintech startup, BizzBring Media crafted a comprehensive brand identity that reflects innovation, trust, and modernity...</p>
+    <p>For this fintech startup, BizzBring Media crafted a comprehensive brand identity that reflects innovation, trust,
+      and modernity...</p>
 
     <h2>Our Approach</h2>
-    <p>We began with in-depth market research to understand the fintech landscape and the startup's unique value proposition...</p>
+    <p>We began with in-depth market research to understand the fintech landscape and the startup's unique value
+      proposition...</p>
 
     <h2>Deliverables</h2>
     <ul>
@@ -296,12 +362,22 @@
     </ul>
 
     <h2>Results</h2>
-    <p>The new brand identity helped the startup secure $2M in seed funding by presenting a polished and professional image to investors...</p>
+    <p>The new brand identity helped the startup secure $2M in seed funding by presenting a polished and professional
+      image to investors...</p>
 
     <div class="project-gallery" data-aos="zoom-in">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Logo Design">
-      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Business Cards">
-      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Social Media Templates">
+      <video controls="thumbnail1.jpg">
+        <source src="project-1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video controls="thumbnail2.jpg">
+        <source src="project-1-i.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video controls="thumbnail3.jpg">
+        <source src="project-i-ii.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <div class="cta-wrapper" data-aos="fade-up">
@@ -330,4 +406,5 @@
     window.onload = typeEffect;
   </script>
 </body>
+
 </html>
