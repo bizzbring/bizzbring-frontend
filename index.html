@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BizzBring Media is a creative digital agency specializing in SEO, web development, branding, and digital marketing. We help brands grow through data-driven strategies and standout design." />
-   <title>BizzBring Media | Digital Marketing & Web Development Agency</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description"
+        content="BizzBring Media is a creative digital agency specializing in SEO, web development, branding, and digital marketing. We help brands grow through data-driven strategies and standout design." />
+    <title>BizzBring Media | Digital Marketing & Web Development Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
@@ -45,39 +48,80 @@
 
         /* Floating Animation */
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         @keyframes floatReverse {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(20px);
+            }
         }
 
         /* Glowing Effect */
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.4); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.4);
+            }
         }
 
         /* Gradient Animation */
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Text Typing Animation */
         @keyframes typeWriter {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
 
         @keyframes blinkCursor {
-            from, to { border-color: transparent; }
-            50% { border-color: var(--dark-slate); }
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: var(--dark-slate);
+            }
         }
-        
+
 
         /* Particle Animation */
         .particles {
@@ -105,12 +149,15 @@
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
                 opacity: 0.7;
             }
+
             90% {
                 opacity: 0.7;
             }
+
             100% {
                 transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
@@ -137,6 +184,7 @@
                 transform: translateY(-100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -197,11 +245,27 @@
         }
 
         .nav-menu {
-            list-style: none;
             display: flex;
-            gap: 0px;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            list-style: none;
             margin: 0;
             padding: 0;
+        }
+
+        .nav-contact {
+            margin-left: 10px;
+        }
+
+
+        .nav-menu li {
+            list-style: none;
         }
 
         .nav-menu a {
@@ -252,16 +316,12 @@
             transform: none;
         }
 
-       /* Hover effect */
-       .nav-menu .contact-btn:hover {
-            background-color: var(--accent-hover);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-        }
- 
-        /* Temporary click effect */
-        .contact-btn.clicked {
-        background-color: red !important;
-        color: white;
+        /* Hover effect */
+        .nav-menu .contact-btn:hover {
+            background-color: var(--dark-slate);
+            /* same as base color */
+            box-shadow: none;
+            transform: none;
         }
 
         /* Hero Section with Enhanced Animations */
@@ -296,9 +356,10 @@
             line-height: 1.2;
             opacity: 0;
             transform: translateY(50px);
-           animation: fadeInUp 1s ease 0.2s forwards, floatText 4s ease-in-out infinite;
+            animation: fadeInUp 1s ease 0.2s forwards, floatText 4s ease-in-out infinite;
             position: relative;
         }
+
         .hero-text p {
             font-size: 1.1rem;
             line-height: 1.8;
@@ -394,22 +455,46 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
         }
+
         @keyframes floatText {
-            0%, 100% {
-            transform: translateY(0);
-         }
-          50% {
-          transform: translateY(-5px);
-         }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
         }
 
 
@@ -473,19 +558,26 @@
         }
 
         @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes popIn {
-              0% {
-             opacity: 0;
-              transform: scale(0.9) translateY(30px);
-              }
-             100% {
-             opacity: 1;
-             transform: scale(1) translateY(0);
-               }
+            from {
+                transform: rotate(0deg);
             }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
 
 
         .about-content {
@@ -545,7 +637,7 @@
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
-           border: 1px solid var(--border-color);
+            border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
         }
@@ -675,7 +767,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            content:none;
+            content: none;
             transition: left 0.4s ease;
         }
 
@@ -683,12 +775,12 @@
             left: 0;
         }
 
-       .portfolio-btn:hover {
-       color: inherit;
-       transform: none;
-       box-shadow: none;
-       background: none;
-       }
+        .portfolio-btn:hover {
+            color: inherit;
+            transform: none;
+            box-shadow: none;
+            background: none;
+        }
 
 
         .portfolio-btn span {
@@ -812,8 +904,13 @@
         }
 
         @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
 
         /* Enhanced Cursor Ring */
@@ -852,20 +949,31 @@
             opacity: 1;
             transform: translateY(0);
         }
+
         .scroll-animate {
-    opacity: 0;
-    transform: translateY(15px); /* gentler movement */
-    transition: all 0.8s ease-out;
-    }
-   .service-card.scroll-animate.visible {
-  animation: popIn 0.6s ease forwards;
-    }
+            opacity: 0;
+            transform: translateY(15px);
+            /* gentler movement */
+            transition: all 0.8s ease-out;
+        }
+
+        .service-card.scroll-animate.visible {
+            animation: popIn 0.6s ease forwards;
+        }
 
 
         /* Stagger animation for service cards */
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
 
         /* Underline Animation for "Power Your Brand's Digital Growth" */
         .underline-animate {
@@ -888,9 +996,11 @@
             animation: underlineGrow 1.5s ease forwards;
             animation-delay: 1.4s;
         }
+
         .underline-animate.delay::after {
-        animation-delay: 2s; /* Delayed after the first */
-}
+            animation-delay: 2s;
+            /* Delayed after the first */
+        }
 
 
         @keyframes underlineGrow {
@@ -904,11 +1014,11 @@
             .hero h1 {
                 font-size: 3rem;
             }
-            
+
             .hero-content {
                 gap: 50px;
             }
-            
+
             .section {
                 padding: 80px 0;
             }
@@ -1014,30 +1124,36 @@
                 display: none;
             }
         }
+
         /* Reviews Marquee Animation */
-          .reviews-marquee {
-  overflow: hidden;
-  position: relative;
-}
+        .reviews-marquee {
+            overflow: hidden;
+            position: relative;
+        }
 
-.marquee-content {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: scrollLeft 25s linear infinite;
-}
+        .marquee-content {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scrollLeft 25s linear infinite;
+        }
 
-@keyframes scrollLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
 
-.marquee-content .service-card {
-  width: 220px;
-  flex: 0 0 auto;
-  padding: 15px;
-  font-size: 0.85rem;
-}
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-content .service-card {
+            width: 220px;
+            flex: 0 0 auto;
+            padding: 15px;
+            font-size: 0.85rem;
+        }
 
 
         @media (max-width: 480px) {
@@ -1142,53 +1258,54 @@
                 padding: 20px 10px;
             }
         }
+
         /* Thank You Modal Styles */
-#thankYouModal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-}
+        #thankYouModal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
 
-#thankYouModal .modal-box {
-  background: white;
-  padding: 30px 40px;
-  border-radius: 12px;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
+        #thankYouModal .modal-box {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
 
-#thankYouModal .modal-box h2 {
-  margin-bottom: 10px;
-  color: var(--text-main);
-  font-size: 1.4rem;
-}
+        #thankYouModal .modal-box h2 {
+            margin-bottom: 10px;
+            color: var(--text-main);
+            font-size: 1.4rem;
+        }
 
-#thankYouModal .modal-box p {
-  margin-bottom: 20px;
-  color: var(--text-muted);
-  font-size: 1rem;
-}
+        #thankYouModal .modal-box p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
 
-#thankYouModal .modal-box button {
-  padding: 10px 20px;
-  border: none;
-  background-color: var(--dark-slate);
-  color: white;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
+        #thankYouModal .modal-box button {
+            padding: 10px 20px;
+            border: none;
+            background-color: var(--dark-slate);
+            color: white;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -1197,434 +1314,470 @@
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#Reviews">Reviews</a></li>
-                    <li><a href="#contact" class="btn contact-btn">Contact Us</a></li>
-                </ul>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#Reviews">Reviews</a></li>
+                    </ul>
+                    <div class="nav-contact">
+                        <a href="#contact" class="btn contact-btn">Contact Us</a>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
     <main>
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                  <h1>Power Your Brand's <span class="underline-animate"> Digital Growth</span><br></h1>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>
+                            Power Your Brand's <span class="underline-animate">Digital Growth</span><br>
+                        </h1>
 
 
 
 
-                    <p>We create smart services and strategies that boost your traffic, leads, and revenue.
-                       From SEO to social ads, we deliver results that scale your business.</p>
-                    <a href="#contact" class="btn">Talk to us</a>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coworking space">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 class="scroll-animate">About BizzBring Media</h3>
-                    <p class="scroll-animate">We're a full-service digital agency crafting impactful digital experiences.
-                     From standout design and websites to expert video editing and social media,</p>
-                    <p class="scroll-animate">We blend creativity with technology to help brands grow and engage.
-                     Startups or established, we tailor solutions to fit your goals.
-                    Bold, effective, and results-driven—your digital success is our mission.
-                     Ready to elevate your brand? Let's make it happen.</p>
-                     <p class="scroll-animate">At BizzBring Media, we don't just market — We build your Digital Dominance.</p>
-                    <a href="#services" class="btn">Explore Our Services</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Team" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section services">
-        <div class="container">
-            <h2 class="scroll-animate">Our Services</h2>
-            <p class="section-subtitle scroll-animate">We offer comprehensive digital solutions to help your brand stand out in the competitive market</p>
-            <div class="service-grid">
-                <div class="service-card scroll-animate">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Brand Design</h3>
-                    <p>Create memorable brand identities that resonate with your audience and stand out in the marketplace through strategic visual storytelling.</p>
-                </div>
-                <div class="service-card scroll-animate">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Build responsive, fast-loading websites that provide exceptional user experiences and drive conversions for your business.</p>
-                </div>
-                <div class="service-card scroll-animate">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Digital Marketing</h3>
-                    <p>Develop comprehensive digital marketing strategies that increase brand visibility and generate qualified leads for sustainable growth.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section portfolio">
-        <div class="container">
-            <h2 class="scroll-animate">Our Portfolio</h2>
-            <p class="section-subtitle scroll-animate">Discover our latest projects and see how we've helped brands achieve their digital goals</p>
-            <div class="portfolio-grid">
-                <div class="portfolio-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce Platform" loading="lazy">
-                    <div class="portfolio-content">
-                        <h3>E-commerce Platform Redesign</h3>
-                        <p>Complete redesign and development of a modern e-commerce platform that increased sales by 150% within six months of launch.</p>
-                        <a href="project2.html" class="portfolio-btn">View Project</a>
+                        <p>We create smart services and strategies that boost your traffic, leads, and revenue.
+                            From SEO to social ads, we deliver results that scale your business.</p>
+                        <a href="#contact" class="btn">Talk to us</a>
                     </div>
-                </div>
-                <div class="portfolio-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brand Identity" loading="lazy">
-                    <div class="portfolio-content">
-                        <h3>Tech Startup Branding</h3>
-                        <p>Created a comprehensive brand identity for a fintech startup, including logo design, brand guidelines, and marketing materials.</p>
-                        <a href="project.html" class="portfolio-btn">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marketing Campaign" loading="lazy">
-                    <div class="portfolio-content">
-                        <h3>Digital Marketing Campaign</h3>
-                        <p>Executed a multi-channel digital marketing campaign that generated 300% ROI and significantly increased brand awareness.</p>
-                        <a href="project3.html" class="portfolio-btn">View Project</a>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Coworking space">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
- <section id="Reviews" class="section reviews">
-  <div class="container">
-    <h2 class="scroll-animate">Client Reviews</h2>
-    <p class="section-subtitle scroll-animate">Here's what our clients say about working with us</p>
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3 class="scroll-animate">About BizzBring Media</h3>
+                        <p class="scroll-animate">We're a full-service digital agency crafting impactful digital
+                            experiences.
+                            From standout design and websites to expert video editing and social media,</p>
+                        <p class="scroll-animate">We blend creativity with technology to help brands grow and engage.
+                            Startups or established, we tailor solutions to fit your goals.
+                            Bold, effective, and results-driven—your digital success is our mission.
+                            Ready to elevate your brand? Let's make it happen.</p>
+                        <p class="scroll-animate">At BizzBring Media, we don't just market — We build your Digital
+                            Dominance.</p>
+                        <a href="#services" class="btn">Explore Our Services</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Our Team" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="reviews-marquee">
-  <div class="marquee-content">
+        <section id="services" class="section services">
+            <div class="container">
+                <h2 class="scroll-animate">Our Services</h2>
+                <p class="section-subtitle scroll-animate">We offer comprehensive digital solutions to help your brand
+                    stand out in the competitive market</p>
+                <div class="service-grid">
+                    <div class="service-card scroll-animate">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Brand Design</h3>
+                        <p>Create memorable brand identities that resonate with your audience and stand out in the
+                            marketplace through strategic visual storytelling.</p>
+                    </div>
+                    <div class="service-card scroll-animate">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Web Development</h3>
+                        <p>Build responsive, fast-loading websites that provide exceptional user experiences and drive
+                            conversions for your business.</p>
+                    </div>
+                    <div class="service-card scroll-animate">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Digital Marketing</h3>
+                        <p>Develop comprehensive digital marketing strategies that increase brand visibility and
+                            generate qualified leads for sustainable growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- ORIGINAL SET -->
-    <div class="service-card scroll-animate">
-      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=faces&fit=crop&w=80&h=80" alt="Sarah Khan" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Sarah Khan</h3>
-      <p>“BizzBring took our online presence to the next level. Fantastic communication and brilliant execution.”</p>
-    </div>
+        <section id="portfolio" class="section portfolio">
+            <div class="container">
+                <h2 class="scroll-animate">Our Portfolio</h2>
+                <p class="section-subtitle scroll-animate">Discover our latest projects and see how we've helped brands
+                    achieve their digital goals</p>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item scroll-animate">
+                        <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="E-commerce Platform" loading="lazy">
+                        <div class="portfolio-content">
+                            <h3>E-commerce Platform Redesign</h3>
+                            <p>Complete redesign and development of a modern e-commerce platform that increased sales by
+                                150% within six months of launch.</p>
+                            <a href="project2.html" class="portfolio-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item scroll-animate">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Brand Identity" loading="lazy">
+                        <div class="portfolio-content">
+                            <h3>Tech Startup Branding</h3>
+                            <p>Created a comprehensive brand identity for a fintech startup, including logo design,
+                                brand guidelines, and marketing materials.</p>
+                            <a href="project.html" class="portfolio-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item scroll-animate">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Marketing Campaign" loading="lazy">
+                        <div class="portfolio-content">
+                            <h3>Digital Marketing Campaign</h3>
+                            <p>Executed a multi-channel digital marketing campaign that generated 300% ROI and
+                                significantly increased brand awareness.</p>
+                            <a href="#" class="portfolio-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="service-card scroll-animate">
-      <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?crop=faces&fit=crop&w=80&h=80" alt="James Lee" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>James Lee</h3>
-      <p>“Professional, creative, and results-driven. I saw a huge improvement in traffic and engagement.”</p>
-    </div>
+        <section id="Reviews" class="section reviews">
+            <div class="container">
+                <h2 class="scroll-animate">Client Reviews</h2>
+                <p class="section-subtitle scroll-animate">Here's what our clients say about working with us</p>
 
-    <div class="service-card scroll-animate">
-      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=faces&fit=crop&w=80&h=80" alt="Oliver" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Oliver</h3>
-      <p>“Their team is top-notch. The branding and web redesign exceeded our expectations.”</p>
-    </div>
+                <div class="reviews-marquee">
+                    <div class="marquee-content">
 
-    <div class="service-card scroll-animate">
-      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&w=80&h=80" alt="Priya Mehta" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Priya Mehta</h3>
-      <p>“They turned our basic website into a lead-generating machine. Highly recommended!”</p>
-    </div>
+                        <!-- ORIGINAL SET -->
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=faces&fit=crop&w=80&h=80"
+                                alt="Sarah Khan"
+                                style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Sarah Khan</h3>
+                            <p>“BizzBring took our online presence to the next level. Fantastic communication and
+                                brilliant execution.”</p>
+                        </div>
 
-    <div class="service-card scroll-animate">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Johnson" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Alex Johnson</h3>
-      <p>“Their design sense and technical execution are unmatched. Truly impressive work.”</p>
-    </div>
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?crop=faces&fit=crop&w=80&h=80"
+                                alt="James Lee" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>James Lee</h3>
+                            <p>“Professional, creative, and results-driven. I saw a huge improvement in traffic and
+                                engagement.”</p>
+                        </div>
 
-    <div class="service-card scroll-animate">
-      <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Brian Evans" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Brian Evans</h3>
-      <p>“Super responsive and full of creative energy. Our campaign ROI more than doubled.”</p>
-    </div>
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=faces&fit=crop&w=80&h=80"
+                                alt="Oliver" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Oliver</h3>
+                            <p>“Their team is top-notch. The branding and web redesign exceeded our expectations.”</p>
+                        </div>
 
-    <!-- DUPLICATE SET -->
-    <div class="service-card scroll-animate">
-      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=faces&fit=crop&w=80&h=80" alt="Sarah Khan" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Sarah Khan</h3>
-      <p>“BizzBring took our online presence to the next level. Fantastic communication and brilliant execution.”</p>
-    </div>
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&w=80&h=80"
+                                alt="Priya Mehta"
+                                style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Priya Mehta</h3>
+                            <p>“They turned our basic website into a lead-generating machine. Highly recommended!”</p>
+                        </div>
 
-    <div class="service-card scroll-animate">
-      <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?crop=faces&fit=crop&w=80&h=80" alt="James Lee" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>James Lee</h3>
-      <p>“Professional, creative, and results-driven. I saw a huge improvement in traffic and engagement.”</p>
-    </div>
+                        <div class="service-card scroll-animate">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Johnson"
+                                style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Alex Johnson</h3>
+                            <p>“Their design sense and technical execution are unmatched. Truly impressive work.”</p>
+                        </div>
 
-    <div class="service-card scroll-animate">
-      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=faces&fit=crop&w=80&h=80" alt="Oliver" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Oliver</h3>
-      <p>“Their team is top-notch. The branding and web redesign exceeded our expectations.”</p>
-    </div>
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="Brian Evans"
+                                style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Brian Evans</h3>
+                            <p>“Super responsive and full of creative energy. Our campaign ROI more than doubled.”</p>
+                        </div>
 
-    <div class="service-card scroll-animate">
-      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&w=80&h=80
+                        <!-- DUPLICATE SET -->
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=faces&fit=crop&w=80&h=80"
+                                alt="Sarah Khan"
+                                style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Sarah Khan</h3>
+                            <p>“BizzBring took our online presence to the next level. Fantastic communication and
+                                brilliant execution.”</p>
+                        </div>
+
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?crop=faces&fit=crop&w=80&h=80"
+                                alt="James Lee" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>James Lee</h3>
+                            <p>“Professional, creative, and results-driven. I saw a huge improvement in traffic and
+                                engagement.”</p>
+                        </div>
+
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=faces&fit=crop&w=80&h=80"
+                                alt="Oliver" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Oliver</h3>
+                            <p>“Their team is top-notch. The branding and web redesign exceeded our expectations.”</p>
+                        </div>
+
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&w=80&h=80
 " alt="Priya Mehta" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Priya Mehta</h3>
-      <p>“They turned our basic website into a lead-generating machine. Highly recommended!”</p>
-    </div>
+                            <h3>Priya Mehta</h3>
+                            <p>“They turned our basic website into a lead-generating machine. Highly recommended!”</p>
+                        </div>
 
-    <div class="service-card scroll-animate">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Johnson" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Alex Johnson</h3>
-      <p>“Their design sense and technical execution are unmatched. Truly impressive work.”</p>
-    </div>
+                        <div class="service-card scroll-animate">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Johnson"
+                                style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Alex Johnson</h3>
+                            <p>“Their design sense and technical execution are unmatched. Truly impressive work.”</p>
+                        </div>
 
-    <div class="service-card scroll-animate">
-      <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Brian evans" style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
-      <h3>Brian Evans</h3>
-      <p>“Super responsive and full of creative energy. Our campaign ROI more than doubled.”</p>
-    </div>
+                        <div class="service-card scroll-animate">
+                            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="Brian evans"
+                                style="border-radius:50%; width:60px; height:60px; margin-bottom:15px;">
+                            <h3>Brian Evans</h3>
+                            <p>“Super responsive and full of creative energy. Our campaign ROI more than doubled.”</p>
+                        </div>
 
-  </div>
-</div>
-  </div>
-</section>
-
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="scroll-animate">Get In Touch</h2>
-            <p class="section-subtitle scroll-animate">Ready to start your next project? Let's discuss how we can help bring your vision to life</p>
-            <div class="contact-content">
-                <div class="contact-info scroll-animate">
-                    <h3>Let's Start a Conversation</h3>
-                    <p>We'd love to hear about your project and discuss how we can help you achieve your goals. Get in touch with us today!</p>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>bizzbringmedia@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 81150 61354</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>India</span>
                     </div>
                 </div>
-                <form class="contact-form scroll-animate">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
             </div>
-        </div>
-    </section>
-    
-</main>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="scroll-animate">Get In Touch</h2>
+                <p class="section-subtitle scroll-animate">Ready to start your next project? Let's discuss how we can
+                    help bring your vision to life</p>
+                <div class="contact-content">
+                    <div class="contact-info scroll-animate">
+                        <h3>Let's Start a Conversation</h3>
+                        <p>We'd love to hear about your project and discuss how we can help you achieve your goals. Get
+                            in touch with us today!</p>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>bizzbringmedia@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 81150 61354</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>India</span>
+                        </div>
+                    </div>
+                    <form class="contact-form scroll-animate">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="footer">
 
-<!-- Thank You Modal -->
-<div id="thankYouModal">
-  <div class="modal-box">
-    <h2>Thank You!</h2>
-    <p>Your message has been received. We’ll get back to you shortly.</p>
-    <button onclick="closeModal()">Close</button>
-  </div>
-</div>
+        <!-- Thank You Modal -->
+        <div id="thankYouModal">
+            <div class="modal-box">
+                <h2>Thank You!</h2>
+                <p>Your message has been received. We’ll get back to you shortly.</p>
+                <button onclick="closeModal()">Close</button>
+            </div>
+        </div>
 
-<div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px; align-items: center;">
-  <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" style="color: white; font-size: 1.5rem;">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://twitter.com/YOUR_HANDLE" target="_blank" style="color: white; font-size: 1.5rem;">
-    <i class="fab fa-twitter"></i>
-  </a>
-  <a href="https://facebook.com/YOUR_HANDLE" target="_blank" style="color: white; font-size: 1.5rem;">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" style="color: white; font-size: 1.5rem;">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-</div>
-
-
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px; align-items: center;">
+            <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" style="color: white; font-size: 1.5rem;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/YOUR_HANDLE" target="_blank" style="color: white; font-size: 1.5rem;">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://facebook.com/YOUR_HANDLE" target="_blank" style="color: white; font-size: 1.5rem;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" style="color: white; font-size: 1.5rem;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
 
 
 
 
-            <p>&copy; 2025 BizzBring Media. All rights reserved.</p>
+
+
+        <p>&copy; 2025 BizzBring Media. All rights reserved.</p>
         </div>
         <div class="cursor-ring" id="cursorRing">
             <div class="cursor-dot"></div>
         </div>
     </footer>
     <script>
-// Mobile menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    const icon = hamburger.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-});
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+                hamburger.querySelector('i').classList.add('fa-bars');
+                hamburger.querySelector('i').classList.remove('fa-times');
             });
+        });
+
+        // Active navigation highlighting on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ✅ Contact form submission (via Fetch to backend)
+        document.querySelector('.contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const data = {
+                name: this.name.value,
+                email: this.email.value,
+                subject: this.subject.value,
+                message: this.message.value
+            };
+
+            try {
+                const response = await fetch("https://bizzbring-backend.onrender.com/api/contact", {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showThankYouModal();
+                    this.reset();
+                } else {
+                    alert("Message failed to send.");
+                }
+            } catch (error) {
+                console.error(error);
+                alert("An error occurred while sending.");
+            }
+        });
+
+        function showThankYouModal() {
+            const modal = document.getElementById('thankYouModal');
+            modal.style.display = 'flex';
         }
-        // Close mobile menu if open
-        navMenu.classList.remove('active');
-        hamburger.querySelector('i').classList.add('fa-bars');
-        hamburger.querySelector('i').classList.remove('fa-times');
-    });
-});
 
-// Active navigation highlighting on scroll
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
+        function closeModal() {
+            const modal = document.getElementById('thankYouModal');
+            modal.style.display = 'none';
         }
-    });
 
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
+        // ✅ Enhanced Cursor Ring
+        const cursor = document.getElementById('cursorRing');
+        const cursorDot = document.querySelector('.cursor-dot');
+
+        let mouseX = 0, mouseY = 0;
+        let currentX = 0, currentY = 0;
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            currentX += (mouseX - currentX) * 0.15;
+            currentY += (mouseY - currentY) * 0.15;
+            cursor.style.top = `${currentY}px`;
+            cursor.style.left = `${currentX}px`;
+            requestAnimationFrame(animateCursor);
         }
-    });
-});
+        animateCursor();
 
-// Scroll reveal animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+        const interactiveElements = document.querySelectorAll('a, button, .btn, input, textarea');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('clicked');
+        });
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('clicked');
+        });
+    </script>
 
-document.querySelectorAll('.scroll-animate').forEach(el => {
-    observer.observe(el);
-});
-
-// ✅ Contact form submission (via Fetch to backend)
-document.querySelector('.contact-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const data = {
-    name: this.name.value,
-    email: this.email.value,
-    subject: this.subject.value,
-    message: this.message.value
-  };
-
-  try {
-    const response = await fetch("https://bizzbring-backend.onrender.com/api/contact", {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-
-    const result = await response.json();
-
-    if (result.success) {
-      showThankYouModal();
-      this.reset();
-    } else {
-      alert("Message failed to send.");
-    }
-  } catch (error) {
-    console.error(error);
-    alert("An error occurred while sending.");
-  }
-});
-
-function showThankYouModal() {
-  const modal = document.getElementById('thankYouModal');
-  modal.style.display = 'flex';
-}
-
-function closeModal() {
-  const modal = document.getElementById('thankYouModal');
-  modal.style.display = 'none';
-}
-
-// Contact button click effect
-const contactBtn = document.querySelector('.contact-btn');
-contactBtn.addEventListener('click', function () {
-    this.classList.add('clicked');
-    setTimeout(() => {
-        this.classList.remove('clicked');
-    }, 1000);
-});
-
-// Enhanced Cursor Ring
-const cursor = document.getElementById('cursorRing');
-const cursorDot = document.querySelector('.cursor-dot');
-
-let mouseX = 0, mouseY = 0;
-let currentX = 0, currentY = 0;
-
-document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-function animateCursor() {
-    currentX += (mouseX - currentX) * 0.15;
-    currentY += (mouseY - currentY) * 0.15;
-    cursor.style.top = `${currentY}px`;
-    cursor.style.left = `${currentX}px`;
-    requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-const interactiveElements = document.querySelectorAll('a, button, .btn, input, textarea');
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
-});
-
-document.addEventListener('mousedown', () => {
-    cursor.classList.add('clicked');
-});
-document.addEventListener('mouseup', () => {
-    cursor.classList.remove('clicked');
-});
-</script>
 </body>
+
 </html>
