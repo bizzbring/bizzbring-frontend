@@ -212,14 +212,7 @@
         }
 
         .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--dark-slate);
-            transition: width 0.3s ease;
+          display:none;
         }
 
         .logo:hover::after {
@@ -1303,13 +1296,39 @@
             font-weight: 500;
             cursor: pointer;
         }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-flex {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* adjust spacing between logo and text */
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
     </style>
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <a href="#home" class="logo">BizzBring Media</a>
+            <a href="#home" class="logo">
+                <span class="logo-flex">
+                    <img src="logo.webp" alt="BizzBring Media Logo" class="logo-img" />
+                    <span class="logo-text">BizzBring</span>
+                </span>
+            </a>
+
+
             <nav class="nav">
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
