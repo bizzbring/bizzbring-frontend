@@ -414,30 +414,17 @@
             position: relative;
             overflow: hidden;
         }
+.btn::before {
+    display: none;
+}
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transition: all 0.4s ease;
-            transform: translate(-50%, -50%);
-        }
 
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
+      .btn:hover {
+    transform: none;
+    box-shadow: none;
+    background-color: #D6A97A; /* optional: keep if you want background to still change */
+}
 
-        .btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
-            background-color: #D6A97A;
-        }
 
         /* Animation Keyframes */
         @keyframes fadeInUp {
