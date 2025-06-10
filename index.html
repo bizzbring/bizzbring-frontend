@@ -1010,25 +1010,25 @@
                 display: block;
             }
 
-   @media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    left: 0;
+ .nav-menu {
+    position: absolute;
     top: 70px;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 70px); /* fill rest of screen */
     background-color: white;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    display: none;
+    padding: 20px 0;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid var(--border-color);
     z-index: 999;
-  }
+}
 
-  .nav-menu.active {
-    transform: translateX(0);
-  }
+.nav-menu.active {
+    display: flex;
+}
+
 
   .nav-menu li {
     margin: 20px 0;
