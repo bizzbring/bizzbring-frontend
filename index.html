@@ -1875,198 +1875,196 @@
     <!-- Custom Cursor -->
     <div class="cursor-ring"></div>
 
-    <script>
-        // Initialize particles
-        function createParticles() {
-            const container = document.querySelector('.particles-container');
-            const isMobile = window.innerWidth <= 768;
-            const particleCount = isMobile ? 15 : 50; // Fewer particles on mobile for performance
+  <script>
+    // Initialize particles
+    function createParticles() {
+        const container = document.querySelector('.particles-container');
+        const isMobile = window.innerWidth <= 768;
+        const particleCount = isMobile ? 15 : 50;
 
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                const type = Math.floor(Math.random() * 3) + 1;
-                particle.className = `particle type-${type}`;
-
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.animationDuration = (8 + Math.random() * 4) + 's';
-
-                container.appendChild(particle);
-            }
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            const type = Math.floor(Math.random() * 3) + 1;
+            particle.className = `particle type-${type}`;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (8 + Math.random() * 4) + 's';
+            container.appendChild(particle);
         }
+    }
 
-        // Enhanced cursor tracking
-        const cursor = document.querySelector('.cursor-ring');
-        let mouseX = 0, mouseY = 0;
-        let currentX = 0, currentY = 0;
+    // Cursor ring tracking
+    const cursor = document.querySelector('.cursor-ring');
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.classList.add('visible');
+    });
 
-            if (!cursor.classList.contains('visible')) {
-                cursor.classList.add('visible');
+    function animateCursor() {
+        const ease = 0.15;
+        currentX += (mouseX - currentX) * ease;
+        currentY += (mouseY - currentY) * ease;
+        cursor.style.left = currentX + 'px';
+        cursor.style.top = currentY + 'px';
+        requestAnimationFrame(animateCursor);
+    }
+
+    // Cursor hover/click effects
+    const interactiveElements = document.querySelectorAll('a, button, .btn, input, textarea, .service-card, .portfolio-item, .review-card');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+    });
+    document.addEventListener('mousedown', () => cursor.classList.add('clicked'));
+    document.addEventListener('mouseup', () => cursor.classList.remove('clicked'));
+
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const menuIcon = hamburger.querySelector('i');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-times');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuIcon.classList.add('fa-bars');
+            menuIcon.classList.remove('fa-times');
+        });
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
+    });
 
-        function animateCursor() {
-            const ease = 0.15;
-            currentX += (mouseX - currentX) * ease;
-            currentY += (mouseY - currentY) * ease;
-
-            cursor.style.left = currentX + 'px';
-            cursor.style.top = currentY + 'px';
-
-            requestAnimationFrame(animateCursor);
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
+    });
 
-        // Enhanced hover effects
-        const interactiveElements = document.querySelectorAll('a, button, .btn, input, textarea, .service-card, .portfolio-item, .review-card');
-
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
-        });
-
-        document.addEventListener('mousedown', () => cursor.classList.add('clicked'));
-        document.addEventListener('mouseup', () => cursor.classList.remove('clicked'));
-
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        const menuIcon = hamburger.querySelector('i');
-
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-
-            if (navMenu.classList.contains('active')) {
-                menuIcon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                menuIcon.classList.replace('fa-times', 'fa-bars');
+    // Scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
         });
+    }, observerOptions);
 
-        // Close mobile menu when clicking links
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuIcon.classList.replace('fa-times', 'fa-bars');
-            });
-        });
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+        observer.observe(el);
+    });
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    // ✅ Contact form submission (to backend)
+    document.querySelector('.contact-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-        // Header scroll effect
-        const header = document.querySelector('.header');
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
 
-        // Enhanced scroll animations with Intersection Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        const data = {
+            name: this.name.value,
+            email: this.email.value,
+            subject: this.subject.value,
+            message: this.message.value
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        try {
+            const response = await fetch("https://bizzbring-backend.onrender.com/api/contact", {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
             });
-        }, observerOptions);
 
-        // Observe all scroll-animate elements
-        document.querySelectorAll('.scroll-animate').forEach(el => {
-            observer.observe(el);
-        });
+            const result = await response.json();
 
-        // Modal close function
-        function closeModal() {
-            modal.classList.remove('show');
-        }
-
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
+            if (response.ok && result.success) {
+                showThankYouModal();
+                this.reset();
+            } else {
+                alert("Message failed to send.");
             }
-        });
-
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-            animateCursor();
-        });
-
-        // Performance optimization: Reduce animations on low-performance devices
-        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
-            document.documentElement.style.setProperty('--animation-duration', '0.3s');
+        } catch (error) {
+            console.error("Contact form error:", error);
+            alert("An error occurred while sending.");
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         }
+    });
 
-        // Add some interactive easter eggs
-        let clickCount = 0;
-        document.querySelector('.logo').addEventListener('click', (e) => {
-            e.preventDefault();
-            clickCount++;
-            if (clickCount >= 5) {
-                document.body.style.animation = 'rainbow 2s ease-in-out';
-                setTimeout(() => {
-                    document.body.style.animation = '';
-                    clickCount = 0;
-                }, 2000);
-            }
-        });
-        // ✅ Contact form submission (via Fetch to backend)
-document.querySelector('.contact-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const data = {
-        name: this.name.value,
-        email: this.email.value,
-        subject: this.subject.value,
-        message: this.message.value
-    };
-
-    try {
-        const response = await fetch("https://bizzbring-backend.onrender.com/api/contact", {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-            showThankYouModal();
-            this.reset();
-        } else {
-            alert("Message failed to send.");
-        }
-    } catch (error) {
-        console.error(error);
-        alert("An error occurred while sending.");
+    function showThankYouModal() {
+        const modal = document.getElementById('thankYouModal');
+        modal.style.display = 'flex';
     }
-});
 
-    </script>
+    function closeModal() {
+        const modal = document.getElementById('thankYouModal');
+        modal.style.display = 'none';
+    }
+
+    // Close modal on outside click
+    const modal = document.getElementById('thankYouModal');
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Easter egg: rainbow flash on logo click 5x
+    let clickCount = 0;
+    document.querySelector('.logo').addEventListener('click', (e) => {
+        e.preventDefault();
+        clickCount++;
+        if (clickCount >= 5) {
+            document.body.style.animation = 'rainbow 2s ease-in-out';
+            setTimeout(() => {
+                document.body.style.animation = '';
+                clickCount = 0;
+            }, 2000);
+        }
+    });
+
+    // Init on DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+        animateCursor();
+    });
+
+    // Performance optimization
+    if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+        document.documentElement.style.setProperty('--animation-duration', '0.3s');
+    }
+</script>
+
 </body>
 
 </html>
