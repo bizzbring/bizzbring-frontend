@@ -1876,7 +1876,8 @@
     <div class="cursor-ring"></div>
 
   <script>
-    // Initialize particles
+  <script>
+    // Particle background
     function createParticles() {
         const container = document.querySelector('.particles-container');
         const isMobile = window.innerWidth <= 768;
@@ -1893,7 +1894,7 @@
         }
     }
 
-    // Cursor ring tracking
+    // Cursor effect
     const cursor = document.querySelector('.cursor-ring');
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
@@ -1933,7 +1934,7 @@
         menuIcon.classList.toggle('fa-times');
     });
 
-    // Close mobile menu on link click
+    // Close menu on link click
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
@@ -1956,11 +1957,7 @@
     // Header scroll effect
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+        header.classList.toggle('scrolled', window.scrollY > 100);
     });
 
     // Scroll animations
@@ -1975,12 +1972,9 @@
             }
         });
     }, observerOptions);
+    document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.scroll-animate').forEach(el => {
-        observer.observe(el);
-    });
-
-    // ✅ Contact form submission (to backend)
+    // ✅ Contact form handling
     document.querySelector('.contact-form').addEventListener('submit', async function (e) {
         e.preventDefault();
 
@@ -2013,7 +2007,7 @@
                 alert("Message failed to send.");
             }
         } catch (error) {
-            console.error("Contact form error:", error);
+            console.error("Form submission error:", error);
             alert("An error occurred while sending.");
         } finally {
             submitBtn.innerHTML = originalText;
@@ -2021,25 +2015,26 @@
         }
     });
 
+    // ✅ Thank-you modal functions
     function showThankYouModal() {
         const modal = document.getElementById('thankYouModal');
+        modal.classList.add('show');
         modal.style.display = 'flex';
     }
 
     function closeModal() {
         const modal = document.getElementById('thankYouModal');
+        modal.classList.remove('show');
         modal.style.display = 'none';
     }
 
-    // Close modal on outside click
-    const modal = document.getElementById('thankYouModal');
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+    document.getElementById('thankYouModal').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) {
             closeModal();
         }
     });
 
-    // Easter egg: rainbow flash on logo click 5x
+    // Easter egg
     let clickCount = 0;
     document.querySelector('.logo').addEventListener('click', (e) => {
         e.preventDefault();
@@ -2053,17 +2048,18 @@
         }
     });
 
-    // Init on DOM ready
+    // Init
     document.addEventListener('DOMContentLoaded', () => {
         createParticles();
         animateCursor();
     });
 
-    // Performance optimization
+    // Performance fallback
     if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
         document.documentElement.style.setProperty('--animation-duration', '0.3s');
     }
 </script>
+
 
 </body>
 
