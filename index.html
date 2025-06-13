@@ -1998,45 +1998,6 @@
             observer.observe(el);
         });
 
-        // Enhanced contact form handling
-        const contactForm = document.getElementById('contactForm');
-        const modal = document.getElementById('thankYouModal');
-
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-
-            const formData = {
-                name: this.name.value,
-                email: this.email.value,
-                subject: this.subject.value,
-                message: this.message.value
-            };
-
-            try {
-                // Simulate API call (replace with your actual endpoint)
-                await new Promise(resolve => setTimeout(resolve, 1500));
-
-                // Show success modal
-                modal.classList.add('show');
-                this.reset();
-
-            } catch (error) {
-                console.error('Form submission error:', error);
-                alert('There was an error sending your message. Please try again.');
-            } finally {
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-
         // Modal close function
         function closeModal() {
             modal.classList.remove('show');
